@@ -1,0 +1,103 @@
+body{
+	background: #efefef;
+}
+body section>.container, body>section{
+    min-width: 1024px;
+}
+header{
+	
+}
+header img{
+	width: 50px;
+	margin-right: 10px;
+}
+header h1{
+	font-size: 28px;
+}
+section.dashboard{
+	background: #fff;
+}
+.loginTitle{
+	font-size: 22px;
+    font-weight: bold;
+    color: #403C3C;
+}
+.dataTables_filter{
+	display: none;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: #fff;
+    color: #428bca;
+}
+.nav-pills>li>a {
+    border-radius: 0;
+    color: #fff;
+}
+.menu{
+	background: #428bca;
+	border: 1px solid #ddd;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #30638E;
+}
+h3, .h3 {
+    font-size: 23px;
+}
+.breadcrumb {
+    margin-top: 10px;
+    background-color: #fff;
+    padding-right: 0;
+}
+.breadcrumb>li+li:before {
+    padding: 0 2px;
+}
+.dataTables_length, .hide-garante, .hide-sem{
+	display: none;
+}
+.label-danger {
+    color: #d9534f;
+    font-weight: 600;
+    font-size: 80%;
+    background: #fff;
+}   
+.reporteControl span{
+    line-height: 34px;
+    padding: 0;
+}
+.reporteControl span label{
+    font-weight: 100;
+}
+.reportePanel label{
+    line-height: 34px;
+    margin-bottom: 0;
+}
+.p30{
+    padding-right: 0;
+    padding-left: 30px;
+}
+input[type=radio], input[type=checkbox]{
+    vertical-align: middle;
+    margin: 0;
+    margin-right: 3px;
+    margin-top: -3px;
+}
+.showEstudent>div{
+    position: fixed;
+    top: 10px;
+    background: #fff; 
+    overflow: scroll;
+    height: 100%;
+}
+.modal-dialog{
+    min-width: 620px;
+    max-width: 620px;
+}
+.showEstudent .form-horizontal .control-label{
+    padding-top: 0;
+}
