@@ -14,11 +14,11 @@ class CreateEstudiantes extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo',11)->unique();
+            $table->string('codigo',11);
             $table->string('nombre', 100);
             $table->string('domicilio', 100);
             $table->string('dni', 8);
-            $table->integer('facultad_id')->unsigned();
+            $table->integer('facultad_id')->unsigned()->nullable();
             $table->foreign('facultad_id')->references('id')->on('facultads');
             $table->timestamps();
         });

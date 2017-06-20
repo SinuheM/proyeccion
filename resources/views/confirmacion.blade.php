@@ -1,27 +1,32 @@
 @extends('layout.proyeccion')
-
-@section('title', 'Gracias')
+@section('Menu', '<li><a href="/solicitud">Solicitudes</a></li>
+                  <li><a href="/nuevaSolicitud">Nueva solicitud</a></li>
+                  <li><a href="/reporte">Reportes</a></li>')
+@section('title', '- Confirmación')
 
 @section('content')
-    <section>
-        <div class="center">
-            <div class="titlePage center">
-                <h2>La solicitud se registro</h2>
-                <h3>
-                <a href="/nuevaSolicitud">Registrar otra</a>
-                </h3>
-            </div>
-            <div class="confirmacion">
-                <img src="img/img-smile-green.png" alt="">
-                
-                <br>
-                <p>
-                    No olvides seguirnos en nuestras redes sociales
+    <section class="dashboard">
+         @include('include.header')
+         <div class="container">
+            <div class="col-xs-2"></div>
+            <div class="center col-xs-10">
+                <div class="titlePage center">
                     <br>
-                    <a href="https://www.facebook.com/etoymorido">
-                        <img src="img/facebook.png" alt="Twitter"></img>
-                    </a>
-                </p>
+                    <h2>La solicitud se registro con exito</h2><br>
+                    <img src="img/img-smile-green.png" alt="">
+                    <br><br>
+                </div>
+                <div class="confirmacion">
+                    <h5>
+                        <a href="/nuevaSolicitud">Registrar otra >></a>
+                    </h5>
+                    <h5>
+                        <a href="/solicitud">Ver todas las solicitudes >></a>
+                    </h5>
+                    <h5>
+                        <a href="/reporte">Crear un reporte >></a>
+                    </h5>
+                </div>
             </div>
         </div>
     </section>

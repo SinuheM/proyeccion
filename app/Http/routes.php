@@ -19,19 +19,21 @@ Route::resource('estudiante', 'solicitudController');
 Route::get('/', 'LogController@InicioSesion');
 
 Route::resource('estudiante', 'estudianteController');
+Route::resource('solicitud', 'solicitudController');
+Route::resource('user', 'userController');
 
 Route::get('nuevaSolicitud', 'solicitudController@contactoNuevo');
 Route::get('solicitud', 'solicitudController@solicitud');
 Route::get('reporte', 'solicitudController@reporte');
 
+Route::get('registrado', 'solicitudController@registrado');
+Route::get('actualizado', 'solicitudController@actualizado');
+
 //JSON
 Route::get('solicitudJson', 'solicitudController@solicitudList');
 Route::get('solicitudAllJson', 'solicitudController@solicitudAllList');
 
-Route::get('welcome','pedidoController@welcome');
-
-Route::resource('user', 'userController');
-
+//Login
 Route::get('login', 'LogController@InicioSesion');
 Route::get('logout', 'LogController@logout');
 Route::resource('log', 'LogController');

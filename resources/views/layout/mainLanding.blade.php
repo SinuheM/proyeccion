@@ -8,7 +8,7 @@
         <!-- Make things a tad bit prettier on mobile IE -->
         <meta http-equiv="cleartype" content="on" />
         <!-- Names are important -->
-        <title>Carrocochino - @yield('title')</title>
+        <title>Proyección - @yield('title')</title>
         <!-- Beauty is only a stylesheet deep -->
 
         <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>        

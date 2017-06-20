@@ -51,10 +51,10 @@ class estudianteController extends Controller
                 'garantiza' => $request['garant'],
                 'motivo_id' => $request['motive'],
                 'user_id' => '1',
-                'estudiante_id' => $request['code'],
+                'estudiante_id' => $solicitud->id,
                 ]);
             //return redirect()->route('gracias', [$pedido]);       
-            return redirect('/gracias');
+            return redirect('/registrado');
             //return redirect('gracias')->header('id', $pedido->id); 
     }
 

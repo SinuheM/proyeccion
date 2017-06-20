@@ -52,7 +52,20 @@ class solicitudController extends Controller
      */
     public function show($id)
     {
-        //
+        if (Auth::check()) {
+            $solicitud = DB::table('solicitudes')
+                        ->join('estudiantes', 'estudiantes.id', '=', 'solicitudes.id')
+                        ->join('motivos', 'motivos.id', '=', 'solicitudes.motivo_id')
+                        ->join('facultads', 'facultads.id', '=', 'estudiantes.facultad_id')
+                        ->select('estudiantes.id','codigo','estudiantes.nombre as nombreEst','motivos.nombre as nombreMot','monto','facultads.nombre as nombreFac','solicitudes.fecha','solicitudes.informe','estudiantes.domicilio','estudiantes.dni','solicitudes.semestre','solicitudes.expediente','solicitudes.garantiza','solicitudes.observacion')
+                        ->where('estudiantes.id', '=', $id)
+                        ->get();
+            
+            return response()->json(
+                $solicitud
+            );
+        }
+        return Redirect('login');
     }
 
     /**
@@ -63,7 +76,14 @@ class solicitudController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::check()) { 
+            $solicitud = \App\solicitud::find($id);
+            $estudiante = \App\estudiante::find($id);
+            $facultades = DB::table('facultads')->get();
+            $motivos = DB::table('motivos')->get();
+            return view('modSolicitud',['solicitud'=>$solicitud,'facultads' => $facultades, 'motivos' => $motivos, 'estudiante' => $estudiante]);
+        }
+        return Redirect('login');
     }
 
     /**
@@ -75,7 +95,33 @@ class solicitudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (Auth::check()) { 
+            $solicitud = \App\solicitud::find($id);
+            $estudiante = \App\estudiante::find($id);
+            
+            $estudiante->fill([
+                'nombre'=> $request['name'],
+                'domicilio' => $request['casa'],
+                'dni' => $request['dni'],
+                'facultad_id' => $request['facu'],
+                ]);
+            $solicitud->fill([
+                'semestre' => $request['sem'],
+                'fecha'=> $request['date'],
+                'monto' => $request['monto'],
+                'expediente' => $request['exp'],
+                'observacion' => $request['observacion'],
+                'motivo_id' => $request['motive'],
+                'garantiza' => $request['garant'],
+                'informe' => $request['informe'],
+                ]);
+            $solicitud->save();
+            $estudiante->save();
+            //return redirect()->route('gracias', [$pedido]);       
+            return redirect('/actualizado');
+
+        }
+        return Redirect('login');
     }
 
     /**
@@ -127,7 +173,7 @@ class solicitudController extends Controller
                         ->join('estudiantes', 'estudiantes.id', '=', 'solicitudes.id')
                         ->join('motivos', 'motivos.id', '=', 'solicitudes.motivo_id')
                         ->join('facultads', 'facultads.id', '=', 'estudiantes.facultad_id')
-                        ->select('codigo','estudiantes.nombre as nombreEst','motivos.nombre as nombreMot','monto','facultads.nombre as nombreFac','solicitudes.fecha','solicitudes.informe')
+                        ->select('estudiantes.id','codigo','estudiantes.nombre as nombreEst','motivos.nombre as nombreMot','monto','facultads.nombre as nombreFac','solicitudes.fecha','solicitudes.informe')
                         ->get();
             
             return response()->json(
@@ -154,4 +200,20 @@ class solicitudController extends Controller
         return Redirect('login');
     }
 
+    public function registrado()
+    {
+        // - Codigo - Nombre - Motivo - Monto - Facultad - Fecha - Estado
+        if (Auth::check()) {
+            return view('confirmacion');
+        }
+        return Redirect('login');
+    }
+    public function actualizado()
+    {
+        // - Codigo - Nombre - Motivo - Monto - Facultad - Fecha - Estado
+        if (Auth::check()) {
+            return view('confirmacionUpdate');
+        }
+        return Redirect('login');
+    }
 }
