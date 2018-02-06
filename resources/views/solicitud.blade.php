@@ -60,6 +60,7 @@
 		        <table class="table table-bordered table-condensed table-striped alumno" id="myTable">
 		            <thead>
 		                <tr>
+		                	<th>Id</th>
 		                    <th>Código</th>
 		                    <th>Nombre</th>
 		                    <th>Motivo</th>
@@ -75,9 +76,6 @@
 		        </table>
     		</div>
     	</div>
-				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-				  Launch demo modal
-				</button>
     </section>
 
 	<section class="Modal">
@@ -95,37 +93,37 @@
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Código:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>2011100831L</span>
+		                            <span id='codeModal'>2011100831L</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','DNI:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>48134118</span>
+		                            <span id='dniModal'>48134118</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-12">
 		                        {!!Form::label('','Nombre:',['class'=>'control-label col-xs-2'])!!}
 		                        <div class="col-xs-8">
-		                            <span>Ximena Cristina Sarella Priale Cordova</span>
+		                            <span id='nombreModal'>Ximena Cristina Sarella Priale Cordova</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Facultad:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>Ingenieria de Sistemas</span>
+		                            <span id='facuModal'>Ingenieria de Sistemas</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Semestre:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                           	<span>4° Sem.</span>
+		                           	<span id='semModal'>4° Sem.</span>
 		                        </div>                        
 		                    </div>
 		                    <div class="form-group col-xs-12">
 		                        {!!Form::label('','Domicilio:',['class'=>'control-label col-xs-2'])!!}
 		                        <div class="col-xs-8">
-		                            <span>Jr. La Union 230</span>
+		                            <span id='domicilioModal'>Jr. La Union 230</span>
 		                        </div>
 		                    </div>
 		                    <div class="row"></div>
@@ -133,51 +131,52 @@
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Fecha:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>20-14-2015</span>
+		                            <span id='fechaModal'>20-14-2015</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Motivo:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>Apoyo Oftalmologico</span>
+		                            <span id='motivoModal'>Apoyo Oftalmologico</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Monto:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>200.00</span>
+		                            <span id='montoModal'>200.00</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Exped.:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>X12</span>
+		                            <span id='expModal'>X12</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-12 hide-garante">
 		                        {!!Form::label('','Garante:',['class'=>'control-label col-xs-2'])!!}
 		                        <div class="col-xs-8">
-		                            
+		                            <span id="garanteModal"></span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-6">
 		                        {!!Form::label('','Estado:',['class'=>'control-label col-xs-4'])!!}
 		                        <div class="col-xs-8">
-		                            <span>Observado</span>
+		                            <span id='estadoModal'>Observado</span>
 		                        </div>
 		                    </div>
 		                    <div class="form-group col-xs-12">
 		                        {!!Form::label('','Observación:',['class'=>'control-label col-xs-2'])!!}
 		                        <div class="col-xs-10">
-		                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, libero quae nulla. Autem blanditiis voluptatibus dolore dignissimos accusantium tenetur quaerat facere in neque qui praesentium, earum, dicta recusandae id ipsa.</span>
+		                            <span id='obsModal'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, libero quae nulla. Autem blanditiis voluptatibus dolore dignissimos accusantium tenetur quaerat facere in neque qui praesentium, earum, dicta recusandae id ipsa.</span>
 		                        </div>
 		                    </div>
 		                    <br>
 		                </fieldset>
 				      </div>
 				      <div class="modal-footer">
+				      	<span class="hide idModal"></span>
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				        <button type="button" class="btn btn-primary">Modificar</button>
+				        <a class="btn btn-primary" id="modificarModal" href="/">Modificar</a>
 				      </div>
 				    </div>
 				  </div>
@@ -194,6 +193,7 @@
 		        dataSrc: ''
 		    },
 		    columns: [
+		    	{ data: 'id' },
 		        { data: 'codigo' },
 		        { data: 'nombreEst' },
 		        { data: 'nombreMot' },
@@ -207,37 +207,37 @@
 		// #column3_search is a <input type="text"> element
 		$('#codigo').on( 'keyup', function () {
 		    table
-		        .columns(0)
+		        .columns(1)
 		        .search( this.value )
 		        .draw();
 		});
 		$('#name').on( 'keyup', function () {
 		    table
-		        .columns(1)
+		        .columns(2)
 		        .search( this.value )
 		        .draw();
 		});
 		$('#motive').on( 'change', function () {
 			if(this.value != "< - - - Todos - - - >")
 			    table
-			        .columns(2)
+			        .columns(3)
 			        .search( this.value )
 			        .draw();
 			else
 				table
-					.columns(2)
+					.columns(3)
 			        .search("")
 			        .draw();
 		});
 		$('#facu').on( 'change', function () {
 			if(this.value != "< - - - Todos - - - >")
 			    table
-			        .columns(4)
+			        .columns(5)
 			        .search( this.value )
 			        .draw();
 			else
 				table
-					.columns(4)
+					.columns(5)
 			        .search("")
 			        .draw();
 		});

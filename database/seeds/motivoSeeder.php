@@ -12,13 +12,14 @@ class motivoSeeder extends Seeder
     public function run()
     {
         DB::table('motivos')->insert([
+            ['nombre'=>'< - - - Todos - - - >',],
             ['nombre'=>'Apoyo oftalmológico',],
 			['nombre'=>'Apoyo por maternidad',],
 			['nombre'=>'Apoyo por defunción',],
-			['nombre'=>'Prestamo económico',],
-			['nombre'=>'Apoyo por salud',],
-			['nombre'=>'Apoyo por alto rendimiento académico',],
-			['nombre'=>'Apoyo por beca de estímulo o deportista destacado',]
+            ['nombre'=>'Apoyo por salud',],
+            ['nombre'=>'Apoyo por alto rendimiento académico',],
+            ['nombre'=>'Apoyo por beca de estímulo o deportista destacado',],
+			['nombre'=>'Prestamo económico',]
 		]);
     }
 }

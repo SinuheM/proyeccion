@@ -4,8 +4,9 @@ body{
 body section>.container, body>section{
     min-width: 1024px;
 }
-header{
-	
+.f-right{
+    float: right;
+    margin-right: 30px;
 }
 header img{
 	width: 50px;
@@ -100,4 +101,13 @@ input[type=radio], input[type=checkbox]{
 }
 .showEstudent .form-horizontal .control-label{
     padding-top: 0;
+}
+.alumno tbody tr{
+    cursor: pointer;
+}
+.table>thead>tr>th:first-child, .table>tbody>tr>td:first-child{
+    display: none;
+}
+.modal-body fieldset label{
+    text-align: right;
 }
