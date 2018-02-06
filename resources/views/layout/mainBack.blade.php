@@ -8,7 +8,7 @@
         <!-- Make things a tad bit prettier on mobile IE -->
         <meta http-equiv="cleartype" content="on" />
         <!-- Names are important -->
-        <title>Carrocochino - @yield('title')</title>
+        <title>Proyección - @yield('title')</title>
 
         <!-- Beauty is only a stylesheet deep -->
         {!!Html::style('https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css')!!}
